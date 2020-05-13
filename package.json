@@ -1,6 +1,6 @@
 {
   "name": "@f1v/zati",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A React component library",
   "main": "lib/zati.js",
   "module": "lib/zati.esm.js",
