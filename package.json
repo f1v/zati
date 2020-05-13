@@ -2,11 +2,14 @@
   "name": "@f1v/zati",
   "version": "0.0.1",
   "description": "A React component library",
-  "main": "lib/index.js",
+  "main": "lib/zati.js",
+  "module": "lib/zati.esm.js",
+  "browser": "lib/zati.umd.js",
   "files": [
     "/lib"
   ],
   "scripts": {
+    "build": "rollup -c",
     "start": "docz dev"
   },
   "contributors": [
@@ -20,20 +23,28 @@
     "url": "https://github.com/f1v/zati.git"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
     "classnames": "^2.2.6",
     "lodash": "^4.17.15",
     "react": "^16.9.0",
     "react-dom": "^16.8.6",
     "react-popper": "^1.3.7",
-    "react-popper-tooltip": "^2.10.1"
+    "react-popper-tooltip": "^2.10.1",
+    "styled-system": "^5.1.5"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.1.0",
+    "@rollup/plugin-node-resolve": "^7.1.3",
+    "@rollup/plugin-typescript": "^4.1.1",
     "@types/classnames": "^2.2.7",
     "@types/lodash": "^4.14.123",
     "@types/react": "^16.8.14",
     "@types/react-dom": "^16.8.4",
     "node-sass": "^4.13.1",
     "prettier": "^1.19.1",
+    "rollup": "^2.10.0",
+    "tslib": "^1.12.0",
     "typescript": "^3.7.5"
   }
 }

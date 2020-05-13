@@ -1,14 +1,12 @@
 import classNames from 'classnames';
 import React from 'react';
-import { default as RouterLink } from 'redux-first-router-link';
-import { Text } from 'zati';
+import { Text } from '../../';
 import styles from './Link.scss'; // tslint:disable-line
 
 interface ILinkProps {
   className?: string;
   color?: string;
   lines?: number;
-  to?: string | Object;
   underline?: boolean;
 
   onClick?(): void;
@@ -31,20 +29,14 @@ class Link extends React.Component<ILinkProps> {
 
     return (
       <Text lines={lines}>
-        {this.props.to ? (
-          <RouterLink to={this.props.to} className={className} style={style}>
-            {children}
-          </RouterLink>
-        ) : (
-          <span
-            className={className}
-            onClick={onClick}
-            role="button"
-            style={style}
-          >
-            {children}
-          </span>
-        )}
+        <span
+          className={className}
+          onClick={onClick}
+          role="button"
+          style={style}
+        >
+          {children}
+        </span>
       </Text>
     );
   }

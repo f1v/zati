@@ -1,5 +1,5 @@
 import React, { ChangeEvent, ReactNode } from 'react';
-import { Checkbox, DateTimePicker, Input, Textarea } from 'zati';
+import { Checkbox, DateTimePicker, Input, Textarea } from '../../';
 
 interface IFieldProps {
   autoFocus?: boolean;

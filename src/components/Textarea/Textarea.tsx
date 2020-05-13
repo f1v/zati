@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
 
-import { BaseInput, IBaseInputProps } from 'zati';
+import { BaseInput, IBaseInputProps } from '../../';
 
 import styles from '../Input/Input.scss'; // tslint:disable-line
 

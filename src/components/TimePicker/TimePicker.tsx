@@ -1,8 +1,5 @@
 import classNames from 'classnames';
-import moment from 'moment';
 import React from 'react';
-
-import TextField from '@material-ui/core/TextField';
 
 import styles from './TimePicker.scss'; // tslint:disable-line
 
@@ -31,7 +28,7 @@ export interface ITimePickerDefaultProps {
  */
 export class TimePicker extends React.Component<ITtimePickerProps> {
   static defaultProps: ITimePickerDefaultProps = {
-    defaultTime: moment().format('HH:mm'),
+    defaultTime: '00:00', // FIXME - Default to now
     id: 'time',
     required: false,
     disabled: false,
@@ -51,22 +48,23 @@ export class TimePicker extends React.Component<ITtimePickerProps> {
       id,
     } = this.props;
 
+    if (fullWidth) {
+      console.info(`fullWidth is not implemented`);
+    }
+
     return (
       <>
-        <TextField
+        {label}
+        <br />
+        <input
           value={value}
           required={required}
           disabled={disabled}
           onChange={onChange}
-          fullWidth={fullWidth}
           id={id}
-          label={label}
           type="time"
           defaultValue={defaultTime}
           className={classNames(styles.time, className)}
-          InputLabelProps={{
-            shrink: true,
-          }}
         />
       </>
     );

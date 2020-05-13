@@ -1,13 +1,3 @@
-export enum SPACINGOLD {
-  xxs = 2,
-  xs = 4,
-  sm = 8,
-  md = 16,
-  lg = 24,
-  xl = 48,
-  xxl = 64,
-}
-
 const DEFAULT_SPACING: number = 16;
 
 export enum SPACING {

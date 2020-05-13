@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
-import { Text } from 'zati';
+import { Text } from '../../';
 import styles from './Pill.scss'; // tslint:disable-line
 
 interface IPillProps {

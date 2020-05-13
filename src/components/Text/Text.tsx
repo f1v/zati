@@ -8,7 +8,7 @@ import {
   textAlign,
   TextAlignProps,
 } from 'styled-system';
-import { Icon } from 'zati';
+import { Icon } from '../../';
 
 import styles from './Text.scss'; // tslint:disable-line
 

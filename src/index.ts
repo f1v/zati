@@ -10,8 +10,6 @@ export * from './components/TimePicker/TimePicker';
 export * from './components/DateTimePicker/DateTimePicker';
 export * from './components/Field/BaseInput';
 export * from './components/Field/Field';
-export * from './components/Form/FormWithValidation';
-export * from './components/Form/ValidatedTextField';
 export * from './components/Icon/Icon';
 export * from './components/IconBar/IconBar';
 export * from './components/Input/Input';

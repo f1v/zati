@@ -1,8 +1,5 @@
 import classNames from 'classnames';
-import moment from 'moment';
 import React from 'react';
-
-import TextField from '@material-ui/core/TextField';
 
 import styles from './DatePicker.scss'; // tslint:disable-line
 
@@ -33,7 +30,7 @@ export interface IDatePickerDefaultProps {
  */
 export class DatePicker extends React.Component<IDatePickerProps> {
   static defaultProps: IDatePickerDefaultProps = {
-    defaultDate: moment().format('YYYY-MM-DD'),
+    defaultDate: `${new Date().getFullYear()}-${new Date().getUTCMonth()}-${new Date().getUTCDate()}`,
     id: 'date',
     name: 'date',
     required: false,
@@ -55,23 +52,23 @@ export class DatePicker extends React.Component<IDatePickerProps> {
       name,
     } = this.props;
 
+    if (fullWidth) {
+      console.info(`fullWidth is not implemented`);
+    }
+
     return (
       <>
-        <TextField
+        {label}
+        <input
           value={value}
           required={required}
           disabled={disabled}
           onChange={onChange}
-          fullWidth={fullWidth}
           id={id}
-          label={label}
           name={name}
           type="date"
           defaultValue={defaultDate}
           className={classNames(styles.date, className)}
-          InputLabelProps={{
-            shrink: true,
-          }}
         />
       </>
     );

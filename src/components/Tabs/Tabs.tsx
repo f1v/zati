@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import React from 'react';
-import { Box } from 'zati';
+import { Box } from '../../';
 
 interface ITabsProps {
   hideOnMount?: boolean;

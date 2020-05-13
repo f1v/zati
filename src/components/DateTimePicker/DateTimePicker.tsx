@@ -1,8 +1,5 @@
 import classNames from 'classnames';
-import moment from 'moment';
 import React from 'react';
-
-import TextField from '@material-ui/core/TextField';
 
 import styles from './DateTimePicker.scss'; // tslint:disable-line
 
@@ -33,7 +30,7 @@ export interface IDateTimePickerDefaultProps {
  */
 export class DateTimePicker extends React.Component<IDateTimePickerProps> {
   static defaultProps: IDateTimePickerDefaultProps = {
-    defaultDate: moment().format('YYYY-MM-DDTHH:mm'),
+    defaultDate: `${new Date().getFullYear()}-${new Date().getUTCMonth()}-${new Date().getUTCDate()} 00:00`,
     disabled: false,
     id: 'dateTime',
     fullWidth: false,
@@ -54,22 +51,24 @@ export class DateTimePicker extends React.Component<IDateTimePickerProps> {
       name,
     } = this.props;
 
+    if (fullWidth) {
+      console.info(`fullWidth is not implemented`);
+    }
+
     return (
-      <TextField
-        value={value}
-        required={required}
-        disabled={disabled}
-        onChange={onChange}
-        fullWidth={fullWidth}
-        name={name}
-        id={id}
-        label={label}
-        type="datetime-local"
-        className={classNames(styles.datetime, className)}
-        InputLabelProps={{
-          shrink: true,
-        }}
-      />
+      <>
+        {label}
+        <input
+          value={value}
+          required={required}
+          disabled={disabled}
+          onChange={onChange}
+          name={name}
+          id={id}
+          type="datetime-local"
+          className={classNames(styles.datetime, className)}
+        />
+      </>
     );
   }
 }

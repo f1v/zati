@@ -1,7 +1,6 @@
 import classNames from 'classnames';
 import _ from 'lodash';
 import React from 'react';
-import { NavLink } from 'redux-first-router-link';
 
 import styles from './Button.scss'; // tslint:disable-line no-relative-imports
 
@@ -35,8 +34,6 @@ export interface IButtonProps {
   outline?: boolean;
   // If true, the button will have rounded corners
   rounded?: boolean;
-  // The route to redirect to when the button is clicked. If defined, an a element will be used
-  to?: Object;
   type?: 'button' | 'submit';
 
   // Callback for onClick
@@ -85,15 +82,11 @@ class Button extends React.Component<IButtonProps> {
   }
 
   render(): React.ReactNode {
-    const { children, disabled, onClick, to, type } = this.props;
+    const { children, disabled, onClick, type } = this.props;
 
     const className: string = this.getClassName();
 
-    return to ? (
-      <NavLink className={className} to={to}>
-        {children}
-      </NavLink>
-    ) : (
+    return (
       <button
         onClick={onClick}
         className={className}

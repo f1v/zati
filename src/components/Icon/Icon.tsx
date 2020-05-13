@@ -13,7 +13,7 @@ import {
   IconThumbsUp,
   IconUser,
   IconUsers,
-} from 'zati';
+} from '../../';
 
 export interface ISvgProps {
   color?: string;

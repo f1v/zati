@@ -1,5 +1,5 @@
 import React from 'react';
-import { ISvgProps } from 'zati';
+import { ISvgProps } from '../';
 
 /**
  * Calendar icon

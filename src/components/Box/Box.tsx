@@ -122,7 +122,7 @@ interface IStyledProps
     PaddingProps,
     WidthProps {}
 
-const Box: StyledComponent<IBoxProps, IStyledProps, {}> = styled(BaseBox)`
+const Box: StyledComponent<any, IStyledProps, any> = styled(BaseBox)`
   ${alignItems}
   ${background}
   ${display}
