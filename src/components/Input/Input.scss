@@ -1,0 +1,33 @@
+.input,
+.textarea {
+  background-color: var(--zati-color-white);
+  border: 1px solid var(--zati-defaults-color-border);
+  border-radius: 4px;
+  color: var(--zati-color-grey-dark);
+  font: var(--zati-defaults-type);
+  line-height: 48px;
+  outline: none;
+  padding: 0 24px;
+  transition: 0.4s ease box-shadow, 0.4s ease border-color;
+  width: 100%;
+
+  &[disabled] {
+    background-color: var(--zati-color-grey-lightest);
+  }
+
+  &:focus {
+    border-color: var(--zati-color-blue-light);
+    box-shadow: 0 0 0 4px rgba(var(--zati-color-blue-lightest), 0.4);
+    color: var(--zati-color-grey-darkest);
+  }
+}
+
+.textarea {
+  line-height: var(--spacer-l);
+  padding: var(--spacer-m) var(--spacer-l);
+}
+
+.compact {
+  line-height: calc(2.6 * 1rem);
+  padding: 0 var(--spacer-m);
+}

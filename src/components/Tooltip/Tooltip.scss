@@ -1,0 +1,14 @@
+.tooltip {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+  color: var(--zati-color-white);
+  padding: 4px 8px;
+
+  &.bottomTooltip {
+    margin-top: 8px;
+  }
+
+  &.topTooltip {
+    margin-bottom: 8px;
+  }
+}

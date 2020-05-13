@@ -1,0 +1,15 @@
+.list {
+  background-color: var(--zati-color-white);
+  border: var(--zati-defaults-border);
+  border-radius: var(--zati-defaults-border-radius);
+  text-decoration: none;
+}
+
+.listItem {
+  line-height: 48px;
+  padding: 0 var(--spacer-m);
+
+  &:not(:last-child) {
+    border-bottom: var(--zati-defaults-border);
+  }
+}

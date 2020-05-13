@@ -1,0 +1,22 @@
+.datetime {
+  // @FIXME Override MUI CSS
+  display: inline-block !important;
+  line-height: 48px !important;
+
+  & > div {
+    color: var(--zati-color-grey-dark);
+    font-family: var(--zati-defaults-type);
+
+    &:before {
+      border-bottom: 1px solid var(--zati-color-blue);
+    }
+
+    &:hover {
+      color: var(--zati-color-grey-darkest);
+
+      &:before {
+        border-bottom: 2px solid var(--zati-color-purple) !important;
+      }
+    }
+  }
+}

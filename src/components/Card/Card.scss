@@ -1,0 +1,52 @@
+.card {
+  background: var(--zati-color-white);
+  border: var(--zati-defaults-border);
+  border-radius: 4px;
+
+  &.bordered {
+    border-left: 3px solid var(--zati-color-grey);
+
+    @at-root .card.danger.bordered {
+      border-color: var(--zati-color-red);
+      border-left: 3px solid var(--zati-color-red);
+    }
+
+    @at-root .card.primary.bordered {
+      border-color: var(--zati-color-blue);
+      border-left: 3px solid var(--zati-color-blue);
+    }
+
+    @at-root .card.warning.bordered {
+      border-color: var(--zati-color-yellow);
+      border-left: 3px solid var(--zati-color-yellow);
+    }
+  }
+
+  &.padded .body {
+    padding: var(--spacer-l);
+  }
+}
+
+.title {
+  background-color: var(--zati-color-grey-lighter);
+  border-radius: 4px 4px 0 0;
+  color: var(--zati-color-grey-darkest);
+  line-height: var(--zati-defaults-element-height);
+  padding: 0 var(--spacer-l);
+  white-space: nowrap;
+
+  .danger > & {
+    background-color: var(--zati-color-red-lightest);
+    color: var(--zati-color-red);
+  }
+
+  .primary > & {
+    background-color: var(--zati-color-blue-lightest);
+    color: var(--zati-color-blue);
+  }
+
+  .warning > & {
+    background-color: var(--zati-color-yellow-lightest);
+    color: var(--zati-color-yellow);
+  }
+}

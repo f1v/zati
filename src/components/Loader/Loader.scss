@@ -1,0 +1,67 @@
+.loader {
+  --dot-color: var(--zati-color-grey-light);
+  --dot-size: 11px;
+  display: inline-block;
+  position: relative;
+  width: calc(var(--dot-size) * 4);
+  height: var(--dot-size);
+
+  div {
+    position: absolute;
+    width: var(--dot-size);
+    height: var(--dot-size);
+    border-radius: 50%;
+    background-color: var(--dot-color);
+    animation-duration: 0.6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+
+    &:nth-child(1) {
+      animation-name: loaderAnimation1;
+    }
+
+    &:nth-child(2) {
+      animation-name: loaderAnimation2;
+    }
+
+    &:nth-child(3) {
+      left: calc(var(--dot-size) * 1.5);
+      animation-name: loaderAnimation2;
+    }
+
+    &:nth-child(4) {
+      left: calc(var(--dot-size) * 3);
+      animation-name: loaderAnimation3;
+    }
+  }
+
+  @keyframes loaderAnimation1 {
+    0% {
+      transform: scale(0);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes loaderAnimation2 {
+    0% {
+      transform: translate(0, 0);
+    }
+
+    100% {
+      transform: translate(calc(var(--dot-size) * 1.4), 0);
+    }
+  }
+
+  @keyframes loaderAnimation3 {
+    0% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(0);
+    }
+  }
+}

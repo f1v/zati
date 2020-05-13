@@ -1,0 +1,17 @@
+@mixin normalize {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin clickable {
+  cursor: pointer;
+}
+
+@mixin typography {
+  font-family: var(--zati-type-family);
+}
+
+@mixin borderDefault {
+  border: 1px solid var(--zati-defaults-color-border);
+}

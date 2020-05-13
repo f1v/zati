@@ -1,0 +1,13 @@
+.avatar {
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
+  border-radius: 100%;
+  display: inline-block;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+
+  /* Remove blank space under img https://codepen.io/Kseso/pen/ovErt/ */
+  vertical-align: top;
+}

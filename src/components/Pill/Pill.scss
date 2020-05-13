@@ -1,0 +1,8 @@
+.pill {
+  background-color: var(--zati-color-grey-light);
+  border-radius: 10rem;
+  color: var(--zati-defaults-color-text);
+  // @NOTE: Caption CSS takes precedence due to import order
+  line-height: 1.2rem !important;
+  padding: 0 0.6rem;
+}

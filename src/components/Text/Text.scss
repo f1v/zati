@@ -1,0 +1,94 @@
+.inherit {
+  display: inline-block;
+}
+
+.normal {
+  display: inline-block;
+  font: var(--zati-defaults-type);
+}
+
+$baseFontSize: 16px;
+$multiplier: 0.75rem; // 1rem = 16px
+
+$h1FontSize: 3 * $multiplier; // 48px
+$h2FontSize: 2.25 * $multiplier; // 36px
+$h3FontSize: 1.5 * $multiplier; // 24px
+$leadFontSize: 1.5 * $multiplier; // 24px
+$captionFontSize: 0.75rem; // 12px
+
+.h1 {
+  @extend .normal;
+  font-size: $h1FontSize;
+  font-weight: var(--zati-type-regular);
+  line-height: $h1FontSize;
+}
+
+.h2 {
+  @extend .normal;
+  font-size: $h2FontSize;
+  font-weight: var(--zati-type-regular);
+  line-height: $h2FontSize;
+}
+
+.h3 {
+  @extend .normal;
+  font-size: $h3FontSize;
+  font-weight: var(--zati-type-semi-bold);
+  line-height: $h3FontSize;
+}
+
+.lead {
+  @extend .normal;
+  color: var(--zati-color-grey);
+  font-size: $leadFontSize;
+  font-weight: var(--zati-type-light);
+  line-height: $leadFontSize;
+}
+
+.caption {
+  @extend .normal;
+  font-size: $captionFontSize;
+  line-height: $captionFontSize;
+}
+
+.clamp {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.hasIcon {
+  align-items: center;
+  display: inline-flex;
+}
+
+.strong {
+  font-weight: 600;
+}
+
+.compact {
+  line-height: 1em;
+}
+
+.regular {
+  line-height: 1.5em;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.wide {
+  line-height: 2em;
+}
+
+.block {
+  display: block;
+}
+
+.breakWord {
+  word-break: break-word;
+}

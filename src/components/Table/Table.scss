@@ -1,0 +1,32 @@
+$tableBorderColor: var(--zati-defaults-color-border);
+$tableHeaderBg: var(--zati-color-grey-lighter);
+$tableHeaderColor: var(--zati-color-grey-dark);
+$tableCellBg: var(--zati-color-white);
+
+$componentHeightWide: 3.5rem * 1.25; /* use --zati-defaults-element-height */
+
+.table {
+  border-spacing: 0 1em;
+  display: grid;
+  grid-auto-columns: 1fr;
+}
+
+.td {
+  align-items: center;
+  background-color: $tableCellBg;
+  border-bottom: 1px solid $tableBorderColor;
+  display: inline-flex;
+  height: var(--zati-defaults-element-height);
+  padding: 0 var(--zati-defaults-element-padding);
+}
+
+.th {
+  @extend .td;
+
+  background-color: $tableHeaderBg;
+  color: $tableHeaderColor;
+}
+
+.wide {
+  height: $componentHeightWide;
+}

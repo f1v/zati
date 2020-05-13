@@ -1,0 +1,13 @@
+.toastsContainer {
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
+.toastElement {
+  background-color: lime;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 14px;
+  padding: 14px;
+}
