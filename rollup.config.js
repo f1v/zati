@@ -5,14 +5,13 @@ import postcss from 'rollup-plugin-postcss';
 import commonjs from '@rollup/plugin-commonjs';
 
 export default {
-  external: ['lodash', 'react', 'react-proptypes'],
+  external: ['lodash', 'react', 'react-dom', 'react-proptypes'],
   input: ['src/components/**/*.tsx'],
   output: {
     name: 'zati',
-    dir: 'lib/',
+    file: 'lib/index.js',
     format: 'esm',
   },
-  preserveModules: true,
   plugins: [
     multi(),
     resolve(), //  find all packages
