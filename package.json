@@ -2,8 +2,8 @@
   "name": "@f1v/zati",
   "version": "0.0.7",
   "description": "A React component library",
-  "main": "lib/bundle.js",
-  "module": "lib/bundle.js",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
   "scripts": {
     "build": "rollup -c"
   },
