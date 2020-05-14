@@ -3,6 +3,7 @@
   "version": "0.0.5",
   "description": "A React component library",
   "main": "lib/bundle.js",
+  "module": "lib/bundle.js",
   "scripts": {
     "build": "rollup -c"
   },
@@ -34,9 +35,10 @@
     "@types/lodash": "^4.14.123",
     "@types/react": "^16.8.14",
     "@types/react-dom": "^16.8.4",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.1",
     "prettier": "^1.19.1",
     "rollup": "^2.10.0",
+    "rollup-plugin-postcss": "^3.1.1",
     "tslib": "^1.12.0",
     "typescript": "^3.7.5"
   },

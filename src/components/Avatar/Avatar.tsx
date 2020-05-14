@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React from 'react';
 
-import styles from './Avatar.scss'; // tslint:disable-line
+import styles from './Avatar.scss';
 
 export interface IAvatarProps {
   alt?: string;
