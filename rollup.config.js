@@ -6,7 +6,7 @@ import commonjs from '@rollup/plugin-commonjs';
 
 export default {
   external: ['lodash', 'react', 'react-dom', 'react-proptypes'],
-  input: ['src/components/**/*.tsx'],
+  input: ['src/components/**/*.tsx', 'src/themes/index.ts'],
   output: {
     name: 'zati',
     file: 'lib/index.js',
