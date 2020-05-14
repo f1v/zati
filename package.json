@@ -1,6 +1,6 @@
 {
   "name": "@f1v/zati",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A React component library",
   "main": "lib/index.js",
   "module": "lib/index.js",
