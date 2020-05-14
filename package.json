@@ -1,6 +1,6 @@
 {
   "name": "@f1v/zati",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A React component library",
   "main": "lib/bundle.js",
   "module": "lib/bundle.js",
