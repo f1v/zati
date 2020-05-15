@@ -4,6 +4,7 @@
   "description": "A React component library",
   "main": "lib/index.js",
   "module": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "build": "rm -rf lib && rollup -c && tsc -d --emitDeclarationOnly --declarationDir lib"
   },
