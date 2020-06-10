@@ -1,4 +1,4 @@
-import classNames from 'classnames';
+import classnames from 'classnames';
 import React from 'react';
 import { BaseInput, IBaseInputProps } from '../../';
 
@@ -11,6 +11,7 @@ class Input extends BaseInput<IBaseInputProps<HTMLInputElement>> {
   render(): React.ReactNode {
     const {
       autoFocus,
+      className,
       compact,
       disabled,
       innerRef,
@@ -20,14 +21,18 @@ class Input extends BaseInput<IBaseInputProps<HTMLInputElement>> {
       type,
       value,
     } = this.props;
-    const className: string = classNames(styles.input, {
-      [styles.compact]: compact,
-    });
+    const classNames: string = classnames(
+      styles.input,
+      {
+        [styles.compact]: compact,
+      },
+      className
+    );
 
     return (
       <input
         autoFocus={autoFocus}
-        className={className}
+        className={classNames}
         disabled={disabled}
         name={name}
         onChange={onChange}

@@ -2,6 +2,7 @@ import React from 'react';
 
 export interface IBaseInputProps<T> {
   autoFocus?: boolean;
+  className?: string;
   compact?: boolean;
   disabled?: boolean;
   innerRef?: React.Ref<T>;
