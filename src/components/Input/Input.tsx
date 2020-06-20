@@ -20,6 +20,7 @@ class Input extends BaseInput<IBaseInputProps<HTMLInputElement>> {
       placeholder,
       type,
       value,
+      ...restProps,
     } = this.props;
     const classNames: string = classnames(
       styles.input,
@@ -40,6 +41,7 @@ class Input extends BaseInput<IBaseInputProps<HTMLInputElement>> {
         ref={innerRef}
         type={type}
         value={value}
+        {...restProps}
       />
     );
   }
