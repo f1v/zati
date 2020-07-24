@@ -13,6 +13,11 @@
       "name": "Veronica Carrillo-Marquez"
     }
   ],
+  "keywords": [
+    "component library",
+    "react",
+    "typescript"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
