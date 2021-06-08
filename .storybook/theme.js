@@ -11,7 +11,7 @@ export default create({
   colorSecondary: '#543ac1',
 
   // UI
-  appBg: '#f8f8f8',
+  appBg: 'linear-gradient(red, yellow)',
   appContentBg: '#fff',
   appBorderColor: '#f4f4f4',
   appBorderRadius: 0,

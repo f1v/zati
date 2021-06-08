@@ -1,0 +1,66 @@
+import {
+  ArgsTable,
+  Canvas,
+  Meta,
+  Story,
+  Source,
+  SourceState,
+} from '@storybook/addon-docs/blocks';
+import { Grid } from '../Grid/Grid';
+import { Checkbox } from './Checkbox';
+
+<Meta title="Design System/Atoms/Checkbox" component={Checkbox}
+  argTypes={{
+    disabled: {
+      control: { type: 'boolean' },
+    },
+    checked: {
+      control: { type: 'boolean' },
+    },
+  }} />
+
+# Checkbox
+
+The `Checkbox` component is used in forms when a user needs to select multiple values from several options.
+
+## Import
+
+<Source dark language="typescript" code="import { Checkbox } from '@f1v/zati';" />
+
+## Usage
+
+Basic usage of `Checkbox`.
+
+<Canvas withSource={SourceState.NONE} mdxSource={false}>
+  <Story name="Usage">
+  <Grid>
+    <Checkbox >Checkbox</Checkbox>
+    <Checkbox checked>Checkbox</Checkbox>
+  </Grid>
+  </Story>
+</Canvas>
+
+###
+
+<Source dark language="jsx" storyId="Usage" />
+
+### Disabled Checkbox
+
+<Canvas withSource={SourceState.OPEN}>
+  <Story name="Disabled Checkbox" args={{disabled: {control: 'boolean'}}}>
+    <Checkbox disabled />
+    <Checkbox checked disabled />
+  </Story>
+</Canvas>
+
+### Custom color
+
+You can override the color scheme of the `Checkbox` to any color.
+
+<Canvas withSource={SourceState.OPEN}>
+  <Story name="Custom color">
+    <Checkbox checked colorScheme="red" />
+  </Story>
+</Canvas>
+
+<ArgsTable of={Checkbox} />

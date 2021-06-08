@@ -5,7 +5,7 @@ import { Icon, IIconProps } from '../Icon/Icon'; // tslint:disable-line no-relat
 
 import { theme } from '../../themes'; // tslint:disable-line no-relative-imports
 
-import styles from './Button.scss'; // tslint:disable-line no-relative-imports
+// import styles from './Button.scss'; // tslint:disable-line no-relative-imports
 
 interface IIconButtonProps {
   buttonProps?: Partial<IButtonProps>;
@@ -31,7 +31,7 @@ export class IconButton extends React.Component<IIconButtonProps> {
 
     return (
       <Button
-        className={styles.iconBtn}
+        // className={styles.iconBtn}
         color={color}
         onClick={onClick}
         {...buttonProps}
@@ -47,7 +47,11 @@ export class IconButton extends React.Component<IIconButtonProps> {
             {children}
           </Box>
         ) : (
-          <Icon icon={icon} color={'var(--zati-color-grey-light)'} {...iconProps} />
+          <Icon
+            icon={icon}
+            color={'var(--zati-color-grey-light)'}
+            {...iconProps}
+          />
         )}
       </Button>
     );

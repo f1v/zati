@@ -37,7 +37,7 @@ import {
   WidthProps,
 } from 'styled-system';
 
-import styles from './Box.scss'; // tslint:disable-line
+import { BoxStyled } from './BoxStyled';
 
 interface IBoxProps extends React.HTMLProps<HTMLElement> {
   bgColor?: string;
@@ -64,21 +64,15 @@ class BaseBox extends React.Component<IBoxProps> {
       border,
       borderRadius,
       color,
-      grid,
       style,
       textAlign,
     } = this.props;
-
-    if (!_.isUndefined(style)) {
-      console.warn(`Using props.style on Box component is not recommended`);
-    }
 
     return {
       backgroundColor: bgColor,
       border,
       borderRadius,
       color,
-      display: grid ? 'grid' : '',
       textAlign,
       ...style,
     };
@@ -86,12 +80,12 @@ class BaseBox extends React.Component<IBoxProps> {
 
   render(): React.ReactNode {
     const { className, onMouseOut, onMouseOver } = this.props;
-    const classList: string = classNames(styles.box, className);
+    const classList: string = classNames(className);
 
     const role: string = onMouseOver || onMouseOut ? 'role' : undefined;
 
     return (
-      <div
+      <BoxStyled
         className={classList}
         onMouseOut={onMouseOut}
         onMouseOver={onMouseOver}
@@ -99,7 +93,7 @@ class BaseBox extends React.Component<IBoxProps> {
         style={this.getItemStyle()}
       >
         {this.props.children}
-      </div>
+      </BoxStyled>
     );
   }
 }

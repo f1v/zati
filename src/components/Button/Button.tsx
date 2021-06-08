@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
+import { Box } from '../Box/Box';
 import { Base } from './Base';
 
 export enum ButtonColor {
@@ -28,6 +29,7 @@ type Props = {
   hoverEffect?: 'outline' | 'fadeDark' | 'fadeLight';
   // If false, the button will be full width
   inline?: boolean;
+  leftIcon?: React.ElementType;
   // If true, the button will have a transparent background and a border
   outline?: boolean;
   // If true, the button will have rounded corners
@@ -77,7 +79,7 @@ export class Button extends React.Component<Props> {
   }
 
   render(): React.ReactNode {
-    const { children, disabled, onClick, type } = this.props;
+    const { children, disabled, leftIcon, onClick, type } = this.props;
 
     const className: string = this.getClassName();
 
@@ -89,7 +91,15 @@ export class Button extends React.Component<Props> {
         tabIndex={0}
         type={type}
       >
-        {children}
+        <Box
+          alignItems="center"
+          grid
+          gridGap="10px"
+          gridTemplateColumns="0fr 1fr"
+        >
+          {leftIcon}
+          {children}
+        </Box>
       </Base>
     );
   }
