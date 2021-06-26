@@ -1,41 +1,45 @@
-import classNames from 'classnames';
 import React from 'react';
-import { Icon } from '../Icon/Icon';
+import { IoCheckmark as Checkmark } from 'react-icons/io5';
 
-import styles from './Checkbox.scss'; // tslint:disable-line
+import { CheckboxStyled as Component } from './CheckboxStyled'; // tslint:disable-line
 
-interface ICheckboxProps {
+type Props = {
+  className?: string;
   checked?: boolean;
   compact?: boolean;
-  value?: string;
-
+  colorScheme?: string;
+  disabled?: boolean;
   onChange?(e: React.MouseEvent): void;
-}
+  value?: string;
+};
 
-/**
- * A checkbox component
- */
-export class Checkbox extends React.Component<ICheckboxProps> {
-  render(): React.ReactNode {
-    const { checked, compact, onChange, value } = this.props;
-    const className: string = classNames(styles.checkbox, {
-      [styles.checked]: checked,
-      [styles.compact]: compact,
-    });
-    const checkSize: number = compact ? 10 : 14;
+export const Checkbox: React.FC<Props> = ({
+  checked,
+  className,
+  colorScheme,
+  compact,
+  disabled,
+  onChange,
+  value = '',
+}) => (
+  <Component
+    className={className}
+    checked={checked}
+    colorScheme={colorScheme}
+    compact={compact}
+    onClick={onChange}
+    role="button"
+  >
+    {checked && <Checkmark />}
+    <input
+      aria-checked={checked}
+      checked={checked}
+      disabled={disabled}
+      readOnly
+      type="checkbox"
+      value={value}
+    />
+  </Component>
+);
 
-    return (
-      <div className={className} onClick={onChange} role="button">
-        {checked && <Icon color="#14c2e7" icon="check" size={checkSize} />}
-        <input
-          aria-checked={checked}
-          checked={checked}
-          placeholder="sd"
-          readOnly
-          type="checkbox"
-          value={value || ''}
-        />
-      </div>
-    );
-  }
-}
+export type CheckboxProps = Props;

@@ -1,8 +1,7 @@
 import classNames from 'classnames';
-import _ from 'lodash';
 import React from 'react';
-
-import styles from './Button.scss'; // tslint:disable-line no-relative-imports
+import { Box } from '../Box/Box';
+import { Base } from './Base';
 
 export enum ButtonColor {
   ERROR = 'error',
@@ -15,7 +14,7 @@ export enum ButtonColor {
   WARNING = 'warning',
 }
 
-export interface IButtonProps {
+type Props = {
   // Text alignment within the button
   align?: string;
   // Class for the button
@@ -30,21 +29,22 @@ export interface IButtonProps {
   hoverEffect?: 'outline' | 'fadeDark' | 'fadeLight';
   // If false, the button will be full width
   inline?: boolean;
+  leftIcon?: React.ElementType;
   // If true, the button will have a transparent background and a border
   outline?: boolean;
   // If true, the button will have rounded corners
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  // If true, the button will have rounded corners
   rounded?: boolean;
+  // Passed to button
   type?: 'button' | 'submit';
 
   // Callback for onClick
   onClick(e?: React.MouseEvent): void;
-}
+};
 
-/**
- * A group of items
- */
-class Button extends React.Component<IButtonProps> {
-  static defaultProps: Partial<IButtonProps> = {
+export class Button extends React.Component<Props> {
+  static defaultProps: Partial<Props> = {
     color: ButtonColor.PRIMARY,
     hoverEffect: 'outline',
     rounded: true,
@@ -64,40 +64,45 @@ class Button extends React.Component<IButtonProps> {
     } = this.props;
 
     return classNames(
-      styles.btn,
-      styles[color],
+      'btn',
+      color,
       {
-        [styles.block]: !inline,
-        [styles.compact]: compact,
-        [styles.disabled]: disabled,
-        [styles.inline]: inline,
-        [styles.outline]: outline,
-        [styles.rounded]: rounded,
-        [styles[`align-${align}`]]: align === 'right' || align === 'left',
-        [styles[`hover${_.upperFirst(hoverEffect)}`]]:
-          hoverEffect === 'fadeDark' || hoverEffect === 'fadeLight',
+        block: !inline,
+        compact,
+        disabled,
+        inline,
+        outline,
+        rounded,
       },
       className
     );
   }
 
   render(): React.ReactNode {
-    const { children, disabled, onClick, type } = this.props;
+    const { children, disabled, leftIcon, onClick, type } = this.props;
 
     const className: string = this.getClassName();
 
     return (
-      <button
+      <Base
         onClick={onClick}
         className={className}
         disabled={disabled}
         tabIndex={0}
         type={type}
       >
-        {children}
-      </button>
+        <Box
+          alignItems="center"
+          grid
+          gridGap="10px"
+          gridTemplateColumns="0fr 1fr"
+        >
+          {leftIcon}
+          {children}
+        </Box>
+      </Base>
     );
   }
 }
 
-export { Button };
+export type ButtonProps = Props;

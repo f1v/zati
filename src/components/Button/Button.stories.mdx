@@ -1,0 +1,80 @@
+import {
+  Meta,
+  Story,
+  Source,
+  SourceState,
+  Canvas,
+} from '@storybook/addon-docs/blocks';
+import { Button, ButtonColor } from './Button';
+import { FaBeer } from 'react-icons/fa';
+
+<Meta title="Design System/Atoms/Button" component={Button} />
+
+# Button
+
+The `Button` component is used to trigger an action or event, such as submitting a form, opening a dialog, canceling an action, or performing a delete operation.
+
+## Import
+
+<Source dark language="typescript" code="import { Button } from '@f1v/zati';" />
+
+## Usage
+
+<Canvas withSource={SourceState.NONE} mdxSource={false}>
+  <Story name="Usage">
+    <Button color={ButtonColor.PRIMARY}>Button</Button>
+  </Story>
+  <div>&nbsp;</div>
+</Canvas>
+
+###
+
+<Source dark language="jsx" storyId="Usage" />
+
+### Button Sizes
+
+Use the `size` prop to change the size of the button. You can set the value to `xs`, `sm`, `md`, or `lg`.
+
+<Canvas withSource={SourceState.OPEN}>
+  <Story name="Button Sizes">
+    <div style={{display: 'grid', gridGap: '10px', gridTemplateColumns: '1fr 1fr 1fr'}}>
+      <Button size="small">Button</Button>
+      <Button size="small">Button</Button>
+      <Button size="small">Button</Button>
+    </div>
+  </Story>
+  <div>&nbsp;</div>
+</Canvas>
+
+### Button Variants
+
+Use the `size` prop to change the size of the button. You can set the value to `xs`, `sm`, `md`, or `lg`.
+
+<Canvas withSource={SourceState.OPEN}>
+  <Story name="Button Variants">
+    <div style={{display: 'grid', gridGap: '10px', gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr 1fr'}}>
+      <Button color={ButtonColor.PRIMARY}>Button</Button>
+      <Button color={ButtonColor.SECONDARY}>Button</Button>
+      <Button color={ButtonColor.ERROR}>Button</Button>
+      <Button color={ButtonColor.WARNING}>Button</Button>
+      <Button color={ButtonColor.LINK}>Button</Button>
+      <Button color={ButtonColor.SUCCESS}>Button</Button>
+    </div>
+  </Story>
+  <div>&nbsp;</div>
+</Canvas>
+
+### Button with Icon
+
+You can add left and right icons to the Button component using the leftIcon and rightIcon props respectively.
+
+<Canvas withSource={SourceState.OPEN}>
+  <Story name="Button with Icon">
+    <div style={{display: 'grid', gridGap: '10px', gridTemplateColumns: '1fr 1fr 1fr'}}>
+      <Button color={ButtonColor.PRIMARY} leftIcon={<FaBeer />}>Button</Button>
+      <Button color={ButtonColor.SECONDARY}>Button</Button>
+      <Button color={ButtonColor.ERROR}>Button</Button>
+    </div>
+  </Story>
+  <div>&nbsp;</div>
+</Canvas>
