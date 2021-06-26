@@ -1,5 +1,5 @@
 import { create } from '@storybook/theming';
-import Comments from '../src/stories/assets/zati_logo.svg';
+// import Comments from '../src/stories/assets/zati_logo.svg';
 
 export default create({
   base: 'light',
