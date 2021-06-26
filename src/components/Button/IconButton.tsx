@@ -1,10 +1,11 @@
 import React from 'react';
+import { IconType } from 'react-icons';
 import { Box } from '../Box/Box';
 import { Button, ButtonProps } from '../Button/Button';
 import { Icon, IIconProps } from '../Icon/Icon';
 
 type Props = ButtonProps & {
-  icon: () => JSX.Element;
+  icon: IconType;
   iconProps?: Partial<IIconProps>;
 };
 
@@ -13,8 +14,8 @@ export const IconButton: React.FC<Props> = ({
   icon,
   iconProps,
   ...props
-}) => {
-  return React.Children.count(children) ? (
+}) =>
+  React.Children.count(children) ? (
     <Button {...props}>
       <Box
         alignItems="center"
@@ -31,4 +32,5 @@ export const IconButton: React.FC<Props> = ({
       <Icon icon={icon} {...iconProps} />
     </Button>
   );
-};
+
+export type IconButtonProps = Props;

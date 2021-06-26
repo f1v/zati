@@ -11,7 +11,7 @@ export const Base = styled.button`
   outline: none;
   padding: 0 var(--zati-defaults-element-padding);
   text-decoration: none;
-  transition: 0.4s ease box-shadow;
+  transition: 0.6s ease background-color, 0.4s ease box-shadow, 0.6s ease color;
   white-space: nowrap;
 
   &.compact {
@@ -35,7 +35,7 @@ export const Base = styled.button`
 
   &.disabled {
     background-color: var(--zati-color-grey-lighter) !important;
-    color: var(--zati-color-grey-light);
+    color: var(--zati-color-grey);
     pointer-events: none;
   }
 
@@ -75,6 +75,15 @@ export const Base = styled.button`
     &:focus,
     &:hover {
       box-shadow: 0 0 0 4px var(--zati-color-purple-light);
+    }
+  }
+
+  &.success {
+    background-color: var(--zati-color-teal);
+
+    &:focus,
+    &:hover {
+      box-shadow: 0 0 0 4px var(--zati-color-teal-light);
     }
   }
 
