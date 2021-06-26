@@ -1,11 +1,5 @@
 import styled from 'styled-components';
-
-type Props = {
-  checked?: boolean;
-  compact?: boolean;
-  colorScheme?: string;
-  disabled?: boolean;
-};
+import { CheckboxProps } from './Checkbox';
 
 const getBorderColor = ({ checked, colorScheme }) => {
   if (checked) {
@@ -15,7 +9,7 @@ const getBorderColor = ({ checked, colorScheme }) => {
   }
 };
 
-export const CheckboxStyled = styled.div<Props>`
+export const CheckboxStyled = styled.div<CheckboxProps>`
   align-items: center;
   cursor: pointer;
   display: flex;
@@ -46,5 +40,3 @@ export const CheckboxStyled = styled.div<Props>`
     width: 18px;
   }
 `;
-
-export type CheckboxStyleProps = Props;
