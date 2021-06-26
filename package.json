@@ -8,7 +8,7 @@
   "scripts": {
     "build": "rm -rf lib && rollup -c && tsc -d --emitDeclarationOnly --declarationDir lib",
     "start": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o dist/docs"
+    "build-storybook": "build-storybook -o dist"
   },
   "contributors": [
     {

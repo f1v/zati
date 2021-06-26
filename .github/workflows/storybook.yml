@@ -1,4 +1,8 @@
-on: push
+on:
+  push:
+    branches:
+      - master
+    paths: ['src/components/**']
 
 name: Publish Storybook
 
