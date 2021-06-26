@@ -1,5 +1,8 @@
 import React, { ChangeEvent, ReactNode } from 'react';
-import { Checkbox, DateTimePicker, Input, Textarea } from '../../';
+import { Checkbox } from '../Checkbox/Checkbox';
+import { DateTimePicker } from '../DateTimePicker/DateTimePicker';
+import { Input } from '../Input/Input';
+import { Textarea } from '../Textarea/Textarea';
 
 interface IFieldProps {
   autoFocus?: boolean;

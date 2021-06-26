@@ -1,5 +1,5 @@
 import { create } from '@storybook/theming';
-import Comments from '../src/stories/assets/zati_logo.svg';
+import Comments from '../static/assets/zati_logo.svg';
 
 export default create({
   base: 'light',
@@ -11,7 +11,7 @@ export default create({
   colorSecondary: '#543ac1',
 
   // UI
-  appBg: 'linear-gradient(red, yellow)',
+  appBg: 'linear-gradient(#eee, white)',
   appContentBg: '#fff',
   appBorderColor: '#f4f4f4',
   appBorderRadius: 0,

@@ -52,12 +52,10 @@ export class Button extends React.Component<Props> {
 
   getClassName(): string {
     const {
-      align,
       className,
       color,
       compact,
       disabled,
-      hoverEffect,
       inline,
       outline,
       rounded,

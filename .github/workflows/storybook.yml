@@ -1,0 +1,25 @@
+on:
+  push:
+    branches:
+      - master
+    paths: ['src/components/**']
+
+name: Publish Storybook
+
+jobs:
+  publish-storybook:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Install and Build
+        run: |
+          npm install
+          npm run build-storybook
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages
+          folder: dist

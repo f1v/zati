@@ -1,7 +1,10 @@
 import classNames from 'classnames';
 import _ from 'lodash';
 import React from 'react';
-import { Box, Loader, SelectionCell, Text } from '../../';
+import { Box } from '../Box/Box';
+import { Loader } from '../Loader/Loader';
+import { Text } from '../Text/Text';
+import { SelectionCell } from './Cells/SelectionCell/SelectionCell';
 
 import styles from './Table.scss'; // tslint:disable-line
 
