@@ -1,7 +1,7 @@
 import classNames from 'classnames';
 import _ from 'lodash';
 import React from 'react';
-import { Checkbox } from '../../../../';
+import { Checkbox } from '../../../Checkbox/Checkbox';
 
 import styles from '../../Table.scss'; // tslint:disable-line
 

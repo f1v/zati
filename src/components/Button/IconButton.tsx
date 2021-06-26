@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from '../Box/Box'; // tslint:disable-line no-relative-imports
-import { Button, ButtonColor, IButtonProps } from '../Button/Button'; // tslint:disable-line no-relative-imports
+import { Button, ButtonColor, ButtonProps } from '../Button/Button'; // tslint:disable-line no-relative-imports
 import { Icon, IIconProps } from '../Icon/Icon'; // tslint:disable-line no-relative-imports
 
 import { theme } from '../../themes'; // tslint:disable-line no-relative-imports
@@ -8,7 +8,7 @@ import { theme } from '../../themes'; // tslint:disable-line no-relative-imports
 // import styles from './Button.scss'; // tslint:disable-line no-relative-imports
 
 interface IIconButtonProps {
-  buttonProps?: Partial<IButtonProps>;
+  buttonProps?: Partial<ButtonProps>;
   color?: ButtonColor;
   icon: string; // TODO Use the IconMap from Icon
   iconProps?: Partial<IIconProps>;

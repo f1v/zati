@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
-import { Text } from '../../';
+import { Text } from '../Text/Text';
 import styles from './Link.scss'; // tslint:disable-line
 
 interface ILinkProps {

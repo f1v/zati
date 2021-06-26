@@ -1,6 +1,6 @@
 import classnames from 'classnames';
 import React from 'react';
-import { BaseInput, IBaseInputProps } from '../../';
+import { BaseInput, IBaseInputProps } from '../Field/BaseInput';
 
 import styles from './Input.scss'; // tslint:disable-line
 
