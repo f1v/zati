@@ -5,7 +5,7 @@ export default create({
   base: 'light',
   brandTitle: 'zati',
   brandUrl: 'https://example.com',
-  brandImage: Comments,
+  // brandImage: Comments,
 
   colorPrimary: '#14c2e7',
   colorSecondary: '#543ac1',
