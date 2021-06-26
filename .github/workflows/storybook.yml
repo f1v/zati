@@ -1,6 +1,4 @@
-on:
-  push:
-    paths: ['src/components/**']
+on: push
 
 name: Publish Storybook
 
