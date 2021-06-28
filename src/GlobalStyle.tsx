@@ -20,6 +20,7 @@ export const GlobalStyle = createGlobalStyle`
     --zati-color-yellow: #e9b20a;
     --zati-color-blue: #14c2e7;
     --zati-color-purple: #543ac1;
+    --zati-color-teal: #1ac1c1;
     --zati-color-white: #fff;
   
     --zati-color-black: #272d36;

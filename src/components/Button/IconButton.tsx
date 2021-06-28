@@ -1,59 +1,34 @@
 import React from 'react';
-import { Box } from '../Box/Box'; // tslint:disable-line no-relative-imports
-import { Button, ButtonColor, ButtonProps } from '../Button/Button'; // tslint:disable-line no-relative-imports
-import { Icon, IIconProps } from '../Icon/Icon'; // tslint:disable-line no-relative-imports
+import { Box } from '../Box/Box';
+import { Button, ButtonProps } from '../Button/Button';
+import { Icon, IIconProps } from '../Icon/Icon';
 
-import { theme } from '../../themes'; // tslint:disable-line no-relative-imports
-
-// import styles from './Button.scss'; // tslint:disable-line no-relative-imports
-
-interface IIconButtonProps {
-  buttonProps?: Partial<ButtonProps>;
-  color?: ButtonColor;
-  icon: string; // TODO Use the IconMap from Icon
+type Props = ButtonProps & {
+  icon: () => JSX.Element;
   iconProps?: Partial<IIconProps>;
-  onClick(e?: React.MouseEvent): void;
-}
+};
 
-/**
- * Button with an icon
- */
-export class IconButton extends React.Component<IIconButtonProps> {
-  render(): React.ReactElement {
-    const {
-      buttonProps,
-      children,
-      color,
-      icon,
-      iconProps,
-      onClick,
-    } = this.props;
-
-    return (
-      <Button
-        // className={styles.iconBtn}
-        color={color}
-        onClick={onClick}
-        {...buttonProps}
+export const IconButton: React.FC<Props> = ({
+  children,
+  icon,
+  iconProps,
+  ...props
+}) => {
+  return React.Children.count(children) ? (
+    <Button {...props}>
+      <Box
+        alignItems="center"
+        grid
+        gridGap="var(--spacer-s)"
+        gridTemplateColumns="0fr 1fr"
       >
-        {React.Children.count(children) ? (
-          <Box
-            alignItems="center"
-            grid
-            gridGap={theme.spacers.xs}
-            gridTemplateColumns="0fr 1fr"
-          >
-            <Icon icon={icon} {...iconProps} />
-            {children}
-          </Box>
-        ) : (
-          <Icon
-            icon={icon}
-            color={'var(--zati-color-grey-light)'}
-            {...iconProps}
-          />
-        )}
-      </Button>
-    );
-  }
-}
+        <Icon icon={icon} {...iconProps} />
+        {children}
+      </Box>
+    </Button>
+  ) : (
+    <Button compact {...props}>
+      <Icon icon={icon} {...iconProps} />
+    </Button>
+  );
+};

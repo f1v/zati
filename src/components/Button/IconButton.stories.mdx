@@ -1,0 +1,52 @@
+import {
+  Meta,
+  Story,
+  Source,
+  SourceState,
+  Canvas,
+} from '@storybook/addon-docs/blocks';
+import { Box } from '../Box/Box';
+import { ButtonColor } from './Button';
+import { IconButton } from './IconButton';
+import { GoCheck as CheckIcon } from 'react-icons/go';
+import { GoLocation as LocationIcon } from 'react-icons/go';
+import { GoReport as WarnIcon } from 'react-icons/go';
+import { GoX as CloseIcon } from 'react-icons/go';
+
+<Meta
+  title="Design System/Molecules/Buttons/IconButton"
+  component={IconButton}
+/>
+
+# IconButton
+
+The `IconButton` component is used to trigger an action or event, such as submitting a form, opening a dialog, canceling an action, or performing a delete operation.
+
+## Import
+
+<Source
+  dark
+  language="typescript"
+  code="import { IconButton } from '@f1v/zati';"
+/>
+
+## Usage
+
+<Canvas withSource={SourceState.NONE} mdxSource={false}>
+  <Story name="Usage">
+    <Box gridGap="10px">
+      <IconButton icon={CloseIcon} color={ButtonColor.ERROR}>
+        Delete
+      </IconButton>
+      <IconButton icon={WarnIcon} color={ButtonColor.WARNING}>
+        Alert
+      </IconButton>
+      <IconButton icon={CheckIcon}>Save</IconButton>
+      <IconButton icon={LocationIcon} color={ButtonColor.SECONDARY} />
+    </Box>
+  </Story>
+</Canvas>
+
+###
+
+<Source dark language="jsx" storyId="Usage" />
