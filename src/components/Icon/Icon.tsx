@@ -1,5 +1,6 @@
 import { isString } from 'lodash';
 import React from 'react';
+import { IconType } from 'react-icons';
 import {
   IconAdd,
   IconCalendar,
@@ -13,7 +14,7 @@ import {
   IconStar,
   IconThumbsUp,
   IconUser,
-  IconUsers,
+  IconUsers
 } from '../../icons';
 
 export interface ISvgProps {
@@ -23,7 +24,7 @@ export interface ISvgProps {
 
 export interface IIconProps extends ISvgProps {
   className?: string;
-  icon: () => JSX.Element;
+  icon: IconType;
   onClick?(): void;
 }
 
@@ -44,7 +45,7 @@ export class Icon extends React.Component<IIconProps> {
     meeting_room: IconMeeting,
     star: IconStar,
     thumbs_up: IconThumbsUp,
-    user: IconUser,
+    user: IconUser
   };
 
   getIconComponent(): React.ComponentType<ISvgProps> {

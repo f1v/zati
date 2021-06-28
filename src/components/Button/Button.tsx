@@ -11,7 +11,7 @@ export enum ButtonColor {
   SECONDARY = 'secondary',
   SUCCESS = 'success',
   TRANSPARENT = 'transparent',
-  WARNING = 'warning',
+  WARNING = 'warning'
 }
 
 type Props = {
@@ -53,11 +53,10 @@ export const Button: React.FC<Props> = ({
   leftIcon,
   onClick,
   outline,
-  type,
   rounded = true,
+  type
 }) => (
   <Base
-    onClick={onClick}
     className={classNames(
       'btn',
       color,
@@ -67,11 +66,13 @@ export const Button: React.FC<Props> = ({
         disabled,
         inline,
         outline,
-        rounded,
+        rounded
       },
       className
     )}
     disabled={disabled}
+    onClick={onClick}
+    role="button"
     tabIndex={0}
     type={type}
   >
