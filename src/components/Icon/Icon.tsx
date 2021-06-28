@@ -1,21 +1,5 @@
-import { isString } from 'lodash';
 import React from 'react';
 import { IconType } from 'react-icons';
-import {
-  IconAdd,
-  IconCalendar,
-  IconCheck,
-  IconCog,
-  IconDelete,
-  IconEdit,
-  IconExit,
-  IconHome,
-  IconMeeting,
-  IconStar,
-  IconThumbsUp,
-  IconUser,
-  IconUsers
-} from '../../icons';
 
 export interface ISvgProps {
   color?: string;
@@ -32,36 +16,9 @@ export interface IIconProps extends ISvgProps {
  * A wrapper for an icon library
  */
 export class Icon extends React.Component<IIconProps> {
-  iconMap: { [key: string]: React.ComponentType<any> } = {
-    add: IconAdd,
-    calendar: IconCalendar,
-    check: IconCheck,
-    cog: IconCog,
-    delete: IconDelete,
-    edit: IconEdit,
-    group: IconUsers,
-    home: IconHome,
-    logout: IconExit,
-    meeting_room: IconMeeting,
-    star: IconStar,
-    thumbs_up: IconThumbsUp,
-    user: IconUser
-  };
-
-  getIconComponent(): React.ComponentType<ISvgProps> {
-    const icon: React.ComponentType<ISvgProps> = this.iconMap[this.props.icon];
-    if (!icon) {
-      console.error('No icon', this.props.icon);
-    }
-
-    return icon;
-  }
-
   render(): React.ReactNode {
     const { color, icon, onClick, size } = this.props;
-    const Component: React.ComponentType<ISvgProps> = isString(icon)
-      ? this.getIconComponent()
-      : icon;
+    const Component = icon;
 
     return onClick ? (
       <button

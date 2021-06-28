@@ -2,11 +2,12 @@ import styled, { StyledComponent } from '@emotion/styled';
 import classNames from 'classnames';
 import _ from 'lodash';
 import React from 'react';
+import { IconType } from 'react-icons';
 import {
   lineHeight,
   LineHeightProps,
   textAlign,
-  TextAlignProps,
+  TextAlignProps
 } from 'styled-system';
 import { Icon } from '../Icon/Icon';
 
@@ -16,7 +17,7 @@ export enum TextTheme {
   ERROR = 'error',
   PRIMARY = 'primary',
   SUCCESS = 'success',
-  WARNING = 'warning',
+  WARNING = 'warning'
 }
 
 interface ITextProps {
@@ -24,7 +25,7 @@ interface ITextProps {
   block?: boolean;
   className?: string;
   color?: string;
-  icon?: string;
+  icon?: IconType;
   iconAfter?: boolean;
   iconColor?: string;
   lineHeight?: 'compact' | 'regular' | 'wide';
@@ -52,7 +53,7 @@ class BaseText extends React.Component<ITextProps> {
       iconAfter,
       lines,
       strong,
-      type,
+      type
     } = this.props;
 
     const classList: string = classNames(className, {
@@ -64,7 +65,7 @@ class BaseText extends React.Component<ITextProps> {
       [styles[type]]: type,
       [styles.truncate]: lines === 1,
       [styles.inherit]: !type,
-      [styles.block]: block,
+      [styles.block]: block
     });
 
     return (
