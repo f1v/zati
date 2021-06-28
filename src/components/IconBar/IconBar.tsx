@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import React from 'react';
+import { IconType } from 'react-icons';
 
 import { theme } from '../../themes'; // tslint:disable-line no-relative-imports
 import { Box } from '../Box/Box'; // tslint:disable-line no-relative-imports
@@ -7,7 +8,7 @@ import { ButtonColor } from '../Button/Button'; // tslint:disable-line no-relati
 import { IconButton } from '../Button/IconButton'; // tslint:disable-line no-relative-imports
 
 type IconBarItem = {
-  icon: React.ReactNode;
+  icon: IconType;
   size?: number;
   onClick(): void;
 };
@@ -38,7 +39,7 @@ export class IconBar extends React.Component<IIconBarProps> {
       color = ButtonColor.NONE,
       icons,
       gap = theme.spacers.s,
-      size = 16,
+      size = 16
     } = this.props;
 
     return (
