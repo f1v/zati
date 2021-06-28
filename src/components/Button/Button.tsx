@@ -43,25 +43,22 @@ type Props = {
   onClick(e?: React.MouseEvent): void;
 };
 
-export class Button extends React.Component<Props> {
-  static defaultProps: Partial<Props> = {
-    color: ButtonColor.PRIMARY,
-    hoverEffect: 'outline',
-    rounded: true,
-  };
-
-  getClassName(): string {
-    const {
-      className,
-      color,
-      compact,
-      disabled,
-      inline,
-      outline,
-      rounded,
-    } = this.props;
-
-    return classNames(
+export const Button: React.FC<Props> = ({
+  children,
+  className,
+  color = ButtonColor.PRIMARY,
+  compact,
+  disabled,
+  inline = true,
+  leftIcon,
+  onClick,
+  outline,
+  type,
+  rounded = true,
+}) => (
+  <Base
+    onClick={onClick}
+    className={classNames(
       'btn',
       color,
       {
@@ -73,34 +70,16 @@ export class Button extends React.Component<Props> {
         rounded,
       },
       className
-    );
-  }
-
-  render(): React.ReactNode {
-    const { children, disabled, leftIcon, onClick, type } = this.props;
-
-    const className: string = this.getClassName();
-
-    return (
-      <Base
-        onClick={onClick}
-        className={className}
-        disabled={disabled}
-        tabIndex={0}
-        type={type}
-      >
-        <Box
-          alignItems="center"
-          grid
-          gridGap="10px"
-          gridTemplateColumns="0fr 1fr"
-        >
-          {leftIcon}
-          {children}
-        </Box>
-      </Base>
-    );
-  }
-}
+    )}
+    disabled={disabled}
+    tabIndex={0}
+    type={type}
+  >
+    <Box alignItems="center" grid gridGap="10px" gridTemplateColumns="0fr 1fr">
+      {leftIcon}
+      {children}
+    </Box>
+  </Base>
+);
 
 export type ButtonProps = Props;

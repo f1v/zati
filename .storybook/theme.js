@@ -29,11 +29,5 @@ export default create({
   barSelectedColor: '#14c2e7',
   barBg: '#fff',
 
-  // Form colors
-  inputBg: 'red',
-  inputBorder: 'yellow',
-  inputTextColor: 'green',
-  inputBorderRadius: 4,
-
   gridCellSize: 100,
 });

@@ -1,3 +1,4 @@
+import { isString } from 'lodash';
 import React from 'react';
 import {
   IconAdd,
@@ -22,7 +23,7 @@ export interface ISvgProps {
 
 export interface IIconProps extends ISvgProps {
   className?: string;
-  icon: string;
+  icon: () => JSX.Element;
   onClick?(): void;
 }
 
@@ -56,8 +57,10 @@ export class Icon extends React.Component<IIconProps> {
   }
 
   render(): React.ReactNode {
-    const { color, onClick, size } = this.props;
-    const Component: React.ComponentType<ISvgProps> = this.getIconComponent();
+    const { color, icon, onClick, size } = this.props;
+    const Component: React.ComponentType<ISvgProps> = isString(icon)
+      ? this.getIconComponent()
+      : icon;
 
     return onClick ? (
       <button

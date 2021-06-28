@@ -5,6 +5,7 @@ export const Base = styled.button`
   color: var(--zati-color-white);
   cursor: pointer;
   font: var(--zati-defaults-type);
+  height: 3rem;
   line-height: 3rem;
   margin: 0;
   outline: none;

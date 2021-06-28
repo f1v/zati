@@ -6,9 +6,20 @@ import {
   Canvas,
 } from '@storybook/addon-docs/blocks';
 import { Button, ButtonColor } from './Button';
-import { FaBeer } from 'react-icons/fa';
 
-<Meta title="Design System/Atoms/Button" component={Button} />
+<Meta
+  title="Design System/Atoms/Button"
+  component={Button}
+  argTypes={{
+    align: {
+      control: { type: 'select' },
+      options: ['right', 'left'],
+    },
+    color: {
+      control: { type: 'color' },
+    },
+  }}
+/>
 
 # Button
 
@@ -24,7 +35,6 @@ The `Button` component is used to trigger an action or event, such as submitting
   <Story name="Usage">
     <Button color={ButtonColor.PRIMARY}>Button</Button>
   </Story>
-  <div>&nbsp;</div>
 </Canvas>
 
 ###
@@ -43,7 +53,6 @@ Use the `size` prop to change the size of the button. You can set the value to `
       <Button size="small">Button</Button>
     </div>
   </Story>
-  <div>&nbsp;</div>
 </Canvas>
 
 ### Button Variants
@@ -64,17 +73,5 @@ Use the `size` prop to change the size of the button. You can set the value to `
   <div>&nbsp;</div>
 </Canvas>
 
-### Button with Icon
-
-You can add left and right icons to the Button component using the leftIcon and rightIcon props respectively.
-
-<Canvas withSource={SourceState.OPEN}>
-  <Story name="Button with Icon">
-    <div style={{display: 'grid', gridGap: '10px', gridTemplateColumns: '1fr 1fr 1fr'}}>
-      <Button color={ButtonColor.PRIMARY} leftIcon={<FaBeer />}>Button</Button>
-      <Button color={ButtonColor.SECONDARY}>Button</Button>
-      <Button color={ButtonColor.ERROR}>Button</Button>
-    </div>
-  </Story>
-  <div>&nbsp;</div>
-</Canvas>
+Props
+<ArgsTable of={Button} />
