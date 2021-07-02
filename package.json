@@ -7,8 +7,11 @@
   "types": "lib/index.d.ts",
   "scripts": {
     "build": "rm -rf lib && rollup -c && tsc -d --emitDeclarationOnly --declarationDir lib",
+    "build-storybook": "build-storybook -o dist",
     "start": "start-storybook -p 6006",
-    "build-storybook": "build-storybook -o dist"
+    "test": "jest -c ./config/jest.config.js --watch",
+    "test:ci": "jest -c ./config/jest.config.js",
+    "types:check": "tsc -p ."
   },
   "contributors": [
     {
@@ -29,13 +32,19 @@
     "@emotion/core": "^10.0.28",
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^10.0.27",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@types/jest": "^26.0.23",
+    "babel-jest": "^27.0.6",
     "classnames": "^2.2.6",
+    "jest": "^27.0.6",
     "lodash": "^4.17.15",
     "react-icons": "^4.2.0",
     "react-popper": "^1.3.7",
     "react-popper-tooltip": "^2.10.1",
     "styled-components": "^5.2.1",
-    "styled-system": "^5.1.5"
+    "styled-system": "^5.1.5",
+    "ts-jest": "^27.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.13.8",
