@@ -4,7 +4,7 @@ import { Box } from '../Box/Box';
 import { AsyncButton } from './AsyncButton';
 import { ButtonColor } from './Button';
 
-export const Usage2 = () => (
+export const Usage = () => (
   <Box gridGap="var(--spacer-s)">
     <AsyncButton isLoading onClick={alert} />
     <AsyncButton

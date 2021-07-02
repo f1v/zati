@@ -1,7 +1,6 @@
 import classNames from 'classnames';
-import React from 'react';
-import { Box } from '../Box/Box';
-import { Base } from './Base';
+import * as React from 'react';
+import { Base } from './ButtonStyle';
 
 export enum ButtonColor {
   ERROR = 'error',
@@ -29,7 +28,6 @@ type Props = {
   hoverEffect?: 'outline' | 'fadeDark' | 'fadeLight';
   // If false, the button will be full width
   inline?: boolean;
-  leftIcon?: React.ElementType;
   // If true, the button will have a transparent background and a border
   outline?: boolean;
   // If true, the button will have rounded corners
@@ -50,7 +48,6 @@ export const Button: React.FC<Props> = ({
   compact,
   disabled,
   inline = true,
-  leftIcon,
   onClick,
   outline,
   rounded = true,
@@ -76,10 +73,7 @@ export const Button: React.FC<Props> = ({
     tabIndex={0}
     type={type}
   >
-    <Box alignItems="center" grid gridGap="10px" gridTemplateColumns="0fr 1fr">
-      {leftIcon}
-      {children}
-    </Box>
+    {children}
   </Base>
 );
 

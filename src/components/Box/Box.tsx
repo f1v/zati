@@ -1,7 +1,7 @@
 import styled, { StyledComponent } from '@emotion/styled';
 import classNames from 'classnames';
 import _ from 'lodash';
-import React, { CSSProperties } from 'react';
+import * as React from 'react';
 import {
   alignItems,
   AlignItemsProps,
@@ -34,7 +34,7 @@ import {
   padding,
   PaddingProps,
   width,
-  WidthProps,
+  WidthProps
 } from 'styled-system';
 
 import { BoxStyled } from './BoxStyled';
@@ -58,14 +58,14 @@ interface IBoxProps extends React.HTMLProps<HTMLElement> {
  * Layout class
  */
 class BaseBox extends React.Component<IBoxProps> {
-  getItemStyle(): CSSProperties {
+  getItemStyle(): React.CSSProperties {
     const {
       bgColor,
       border,
       borderRadius,
       color,
       style,
-      textAlign,
+      textAlign
     } = this.props;
 
     return {
@@ -74,7 +74,7 @@ class BaseBox extends React.Component<IBoxProps> {
       borderRadius,
       color,
       textAlign,
-      ...style,
+      ...style
     };
   }
 
